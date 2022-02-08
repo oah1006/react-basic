@@ -4,7 +4,7 @@ import React from 'react';
 class MyComponent extends React.Component {
 
     state = {
-        name: 'Ronaldo',
+        name: '',
         age: 20,
 
     }
@@ -17,7 +17,7 @@ class MyComponent extends React.Component {
 
     handleOnChangeName = (event) => {
         this.setState({
-            name: event.target.value
+            name: event.target.value,
         })
     }   
 
@@ -25,7 +25,9 @@ class MyComponent extends React.Component {
         alert('Click me');
     }
 
+    // re-render
     render() {
+        console.log('>>> call render: ', this.state)
         return (
             <>
                 <div className="first">
