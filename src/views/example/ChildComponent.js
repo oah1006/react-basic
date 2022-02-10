@@ -36,6 +36,7 @@ class ChildComponent extends React.Component {
         console.log('>>> check props: ', this.props)
         // let name = this.props.name;
         // let age = this.props.age;
+        //key: value
 
         let {name, age} = this.props;
         return (
