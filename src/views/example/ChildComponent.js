@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class ChildComponent extends React.Component {
 
     state = {
@@ -33,15 +32,23 @@ class ChildComponent extends React.Component {
 
     // re-render
     render() {
-        console.log('>>> check props: ', this.props)
-        // let name = this.props.name;
-        // let age = this.props.age;
-        //key: value
-
-        let {name, age} = this.props;
+        console.log('>>> call props: ', this.props)
+        let { name, age, address, arrJobs } = this.props;
+        let a = '';
         return (
             <>
-                <div>Child Component: {name} - {age}</div>
+               <div className="job-lists">
+                   {
+                        a = arrJobs.map((item, index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.title} - {item.salary}
+                                </div>
+                            )
+                       })
+                   }
+                   {console.log('>> check map array: ', a)}
+               </div>
             </>
         )
     }
